@@ -72,4 +72,16 @@ public class Pet {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "id=" + id +
+                ", category=" + category +
+                ", name='" + name + '\'' +
+                ", photoUrls=" + photoUrls +
+                ", tags=" + tags +
+                ", status='" + status + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
