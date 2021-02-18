@@ -33,4 +33,12 @@ public class Category {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

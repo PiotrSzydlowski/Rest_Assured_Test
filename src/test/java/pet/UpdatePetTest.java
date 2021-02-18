@@ -14,18 +14,28 @@ import static io.restassured.RestAssured.given;
 public class UpdatePetTest extends SuiteTestBase {
 
     Pet pet;
+    Pet createdPet;
 
     @BeforeMethod
-    public void createPetBeforePutMethod(){
+    public void createPetBeforePutMethod() {
         PetTestDataGenerator generatedPet = new PetTestDataGenerator();
         pet = generatedPet.generatePet();
+        createdPet = given()
+                .body(pet)
+                .contentType("application/json")
+                .when()
+                .post("pet")
+                .then()
+                .statusCode(HttpStatus.SC_OK)
+                .extract()
+                .as(Pet.class);
     }
 
     @Test
-    public void updatePet(){
+    public void updatePet() {
         pet.setName(new Faker().name().firstName());
         Pet actualPet = given()
-                .body(this.pet)
+                .body(pet)
                 .contentType("application/json")
                 .when()
                 .put("pet")
@@ -33,7 +43,6 @@ public class UpdatePetTest extends SuiteTestBase {
                 .statusCode(HttpStatus.SC_OK)
                 .extract()
                 .as(Pet.class);
-
-        Assertions.assertThat(pet).isNotEqualTo(actualPet);
+        Assertions.assertThat(createdPet.getName()).isNotEqualTo(actualPet.getName());
     }
 }

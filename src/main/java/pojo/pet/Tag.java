@@ -33,4 +33,13 @@ public class Tag {
         this.additionalProperties.put(name, value);
     }
 
+
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

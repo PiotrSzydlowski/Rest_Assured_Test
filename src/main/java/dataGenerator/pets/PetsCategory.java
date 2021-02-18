@@ -22,4 +22,12 @@ public enum PetsCategory {
         return categoryName;
     }
 
+
+    @Override
+    public String toString() {
+        return "PetsCategory{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                '}';
+    }
 }

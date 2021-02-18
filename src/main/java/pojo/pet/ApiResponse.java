@@ -34,7 +34,16 @@ public class ApiResponse {
         this.message = message;
     }
 
-//    public Map<String, Object> getAdditionalProperties() {
+    @Override
+    public String toString() {
+        return "ApiResponse{" +
+                "code=" + code +
+                ", type='" + type + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
+
+    //    public Map<String, Object> getAdditionalProperties() {
 //        return this.additionalProperties;
 //    }
 //
