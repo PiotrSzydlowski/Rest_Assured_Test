@@ -21,7 +21,7 @@ public class DeletePetTests extends SuiteTestBase {
     }
 
     @Test
-    public void givenNonExistingPetWhenDeletingPetThenPetNotFoundTest(){
+    public void shouldPetDeleteAfterDeleteMethod(){
             given()
                     .when()
                     .delete("pet/{petId}", nonExistingPetId)

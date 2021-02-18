@@ -32,7 +32,7 @@ public class UpdatePetTest extends SuiteTestBase {
     }
 
     @Test
-    public void updatePet() {
+    public void shouldNameOfPetChangesAfterPutMethod() {
         pet.setName(new Faker().name().firstName());
         Pet actualPet = given()
                 .body(pet)

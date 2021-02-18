@@ -15,7 +15,7 @@ public class CreatePetTests extends SuiteTestBase {
     private Pet actualPet;
 
     @Test
-    public void givenPetWhenPostPetThenPetIsCreatedTest() {
+    public void shouldPetCreatedAfterPostMethod() {
 
         Pet pet = new PetTestDataGenerator().generatePet();
 
@@ -29,8 +29,7 @@ public class CreatePetTests extends SuiteTestBase {
                 .extract()
                 .as(Pet.class);
 
-        Assertions.assertThat(actualPet).describedAs("Send Pet was different than received by API")
-                .usingRecursiveComparison().isEqualTo(pet);
+        Assertions.assertThat(actualPet).usingRecursiveComparison().isEqualTo(pet);
     }
 
     @AfterMethod
@@ -48,8 +47,7 @@ public class CreatePetTests extends SuiteTestBase {
         expectedApiResponse.setType("unknown");
         expectedApiResponse.setMessage(actualPet.getId().toString());
 
-        Assertions.assertThat(apiResponse).describedAs("API Response from system was not as expected")
-                .usingRecursiveComparison().isEqualTo(expectedApiResponse);
+        Assertions.assertThat(apiResponse).usingRecursiveComparison().isEqualTo(expectedApiResponse);
 
     }
 }
