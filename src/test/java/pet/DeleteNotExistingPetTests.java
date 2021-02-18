@@ -8,7 +8,7 @@ import testBases.SuiteTestBase;
 
 import static io.restassured.RestAssured.given;
 
-public class DeletePetTests extends SuiteTestBase {
+public class DeleteNotExistingPetTests extends SuiteTestBase {
 
     private int nonExistingPetId;
 
@@ -22,10 +22,10 @@ public class DeletePetTests extends SuiteTestBase {
 
     @Test
     public void shouldPetDeleteAfterDeleteMethod(){
-            given()
-                    .when()
-                    .delete("pet/{petId}", nonExistingPetId)
-                    .then()
-                    .statusCode(HttpStatus.SC_NOT_FOUND);
+        given()
+                .when()
+                .delete("pet/{petId}", nonExistingPetId)
+                .then()
+                .statusCode(HttpStatus.SC_NOT_FOUND);
     }
 }
