@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke tests">
+
+    <test name="Create PET API">
+        <classes>
+            <class name="pet.CreatePetTests"/>
+        </classes>
+    </test>
+
+    <test name="Delete PET API">
+        <classes>
+            <class name="pet.DeletePetTest"/>
+            <class name="pet.DeleteNotExistingPetTests"/>
+        </classes>
+    </test>
+
+    <test name="Get PET API">
+        <classes>
+            <class name="pet.GetListOfPets"/>
+        </classes>
+    </test>
+
+    <test name="Update PET API">
+        <classes>
+            <class name="pet.UpdatePetTest"/>
+        </classes>
+    </test>
+
+</suite>

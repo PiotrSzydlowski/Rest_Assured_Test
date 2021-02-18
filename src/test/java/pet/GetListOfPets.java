@@ -14,7 +14,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class getListOfPets extends SuiteTestBase {
+public class GetListOfPets extends SuiteTestBase {
 
     private List<Pet> availablePetsList = new LinkedList<>();
 
