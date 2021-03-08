@@ -27,4 +27,10 @@
         </classes>
     </test>
 
+    <test name="Create User">
+        <classes>
+            <class name="user.CreateUser"/>
+        </classes>
+    </test>
+
 </suite>
