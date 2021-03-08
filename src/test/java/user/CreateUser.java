@@ -30,7 +30,6 @@ public class CreateUser extends SuiteTestBase {
                 .extract()
                 .as(ApiResponse.class);
 
-//        assertEquals(apiResponse.getCode(), Integer.valueOf(200));
         assertEquals(apiResponse.getMessage(), userBody.getId().toString());
         assertEquals(apiResponse.getType(), "unknown");
 
