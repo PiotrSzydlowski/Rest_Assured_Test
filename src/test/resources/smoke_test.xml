@@ -2,26 +2,26 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Smoke tests">
 
-    <test name="Create PET API">
+    <test name="Create PET">
         <classes>
             <class name="pet.CreatePetTests"/>
         </classes>
     </test>
 
-    <test name="Delete PET API">
+    <test name="Delete PET">
         <classes>
             <class name="pet.DeletePetTest"/>
             <class name="pet.DeleteNotExistingPetTests"/>
         </classes>
     </test>
 
-    <test name="Get PET API">
+    <test name="Get PET">
         <classes>
             <class name="pet.GetListOfPets"/>
         </classes>
     </test>
 
-    <test name="Update PET API">
+    <test name="Update PET">
         <classes>
             <class name="pet.UpdatePetTest"/>
         </classes>
